@@ -25,11 +25,8 @@ class UDPServer:
         while True:
             # Once we receive a message from the client (connectionless b/c UDP)
             msg, addr = serverSock.recvfrom(1024)
-
-            # Instructions from homework pdf: 
-            # "To experiment with loss, you may want to add some code to the server that randomly 
-            # does not respond to ping messages that it receives (i.e., “drops” the message)."
             
+            # Random dropping of packets:
             # Randomly don't respond to ping: Step 1. generate random number
             rand = random.randint(0,101)
             
