@@ -11,7 +11,7 @@ import datetime
 
 
 #######################################
-# To do:
+# Workflow:
 # 1. Open UDP Socket
 # 2. 10 times:
 #          Start timer, send message
