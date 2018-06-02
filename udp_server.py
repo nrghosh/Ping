@@ -26,8 +26,8 @@ class UDPServer:
             # Once we receive a message from the client (connectionless b/c UDP)
             msg, addr = serverSock.recvfrom(1024)
             
-            # Random dropping of packets:
-            # Randomly don't respond to ping: Step 1. generate random number
+            # Random dropping of packets in order to test the timeout functionality
+            # Step 1. generate random number
             rand = random.randint(0,101)
             
             # Step 2. If the random number is divisble by 10, don't respond. Otherwise, respond.
