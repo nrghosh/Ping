@@ -9,7 +9,6 @@ import sys
 import time
 import datetime
 
-
 #######################################
 # Workflow:
 # 1. Open UDP Socket
@@ -45,7 +44,6 @@ class UDPClient:
             try:
                 # Get the message and server address
                 msg, addr = clientSock.recvfrom(1024)
-                
                 # Calculate round trip time (RTT) by finding current time and subtracting
                 end = time.time()
                 rtt = end - start
