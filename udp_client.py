@@ -1,8 +1,4 @@
-#######################################
-# Nikhil Ghosh
-# COMP 332: Networks
-# Homework 6
-#######################################
+# Ping Client
 
 from socket import *
 import sys
@@ -36,7 +32,7 @@ class UDPClient:
         
         # Ping the address 10 times
         for i in range(0,10):
-            # Use the .sendto function to send the encoded message to the address we created
+            # Send the encoded message to the constructed address
             clientSock.sendto(encodeMsg, addr)       
             # Create and set a start time for the tmer
             start = time.time()
@@ -44,7 +40,7 @@ class UDPClient:
             try:
                 # Get the message and server address
                 msg, addr = clientSock.recvfrom(1024)
-                # Calculate round trip time (RTT) by finding current time and subtracting
+                # Calculate round trip time
                 end = time.time()
                 rtt = end - start
                 cur_time = time.localtime()

@@ -1,8 +1,4 @@
-#######################################
-# Nikhil Ghosh
-# COMP 332: Networks
-# Homework 6
-#######################################
+# Ping Server
 
 import socketserver
 from socket import *
@@ -26,11 +22,13 @@ class UDPServer:
             # Once we receive a message from the client (connectionless b/c UDP)
             msg, addr = serverSock.recvfrom(1024)
             
-            # Random dropping of packets in order to test the timeout functionality
+            # Random dropping of packets in order to test the timeout 
+            # functionality
             # Step 1. generate random number
             rand = random.randint(0,101)
             
-            # Step 2. If the random number is divisble by 10, don't respond. Otherwise, respond.
+            # Step 2. If the random number is divisble by 10, don't respond. 
+            # Otherwise, respond.
             if rand % 10 == 0:
                 continue
             else:
